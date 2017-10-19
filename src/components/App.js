@@ -15,9 +15,7 @@ class App extends Component {
 		findShows(query) {
 			fetch(`http://api.tvmaze.com/search/shows?q=${query}`)
 			 .then(response => response.json())
-			 .then((results) => this.setState({
-			 	shows : results.results
-			 }));
+			 .then((results) => this.setState({ shows: results }));
 		}
 
 		addShowToFavorites(show) {
