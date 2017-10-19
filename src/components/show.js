@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import '../styles/show.css'
 
-class Show extends Component {
+class Shows extends Component {
 
 	addToFavorites(show) {
 		this.props.Favorites(this.props.show);
@@ -17,3 +17,5 @@ class Show extends Component {
 		);
 	}
 }
+
+export default Shows;

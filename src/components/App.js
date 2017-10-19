@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import Shows from './show';
 
 class App extends Component {
 
-	constructor() {
-		super(this);
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			favorite : [],
 			shows : [],
-		}
+		};
+	}
 
 		findShows(query) {
 			fetch(`http://api.tvmaze.com/search/shows?q=${query}`)
@@ -20,7 +22,7 @@ class App extends Component {
 
 		addShowToFavorites(show) {
 			this.setState({
-				favorite : this.state.shows.show.id;
+				favorite : this.state.shows.show.id,
 			});
 		}
 
@@ -31,7 +33,7 @@ class App extends Component {
 		onQueryChange(event) {
 			this.findShows(event.target.value);
 		}
-	}
+
 	render() {
 		return(
 			<div className = "container">
