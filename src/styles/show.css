@@ -28,6 +28,19 @@ article > img {
   margin-bottom: 0.6em;
   width: 50%;
 }
+article1{
+  background: #fff;
+  align-items: center;
+  border-radius: 0.4em;
+  box-shadow: 0 0 0.4em #aaa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+article1 > img {
+  margin-bottom: 0.6em;
+  width: 30%;
+}
 
 article.is-favorite {
   position: relative;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Shows from './show';
 import '../styles/app.css';
+import logo from '../assets/tv-series.png';
 
 class App extends Component {
 
@@ -36,9 +37,11 @@ class App extends Component {
 
 	render() {
 		return(
-			<div className = "container">
-				<h1>TV Jungle</h1>
+			<div>
+				<article1>
+				<img src = {logo} alt = "logo" height= "10%" />
 				<input type = "search" onChange = {this.onQueryChange.bind(this)}/>
+				</article1>
 
 				<section>
 					{this.state.shows.map((serial) => (
