@@ -3,7 +3,7 @@ import '../styles/show.css'
 
 class Shows extends Component {
 
-	addToFavorites(serial) {
+	addToFavorites() {
 		this.props.Favorites(this.props.serial);
 	}
 
@@ -11,8 +11,7 @@ class Shows extends Component {
 		return(
 			<article className={this.props.isFavorite ? 'is-favorite' : ''}>
 				<h2>{this.props.serial.show.name}</h2>
-				{console.log(this.props.serial)}
-				<img alt = {this.props.serial.show.name} src = {this.props.serial.show.image.original} />
+				{(this.props.serial.show.image != null) ? <img alt = {this.props.serial.show.name} src = {this.props.serial.show.image.medium} /> : ''}
 				<button onClick = {this.addToFavorites.bind(this)}>Favorite </button>
 				</article>
 		);

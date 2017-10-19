@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Shows from './show';
+import '../styles/app.css';
 
 class App extends Component {
 
@@ -19,13 +20,14 @@ class App extends Component {
 		}
 
 		addShowToFavorites(serial) {
+			console.log(serial);
 			this.setState({
-				favorite : this.state.favorite.conact(serial.show.id),
+				favorite : this.state.favorite.concat(serial.show.id),
 			});
 		}
 
-		isShowFavorite(show) {
-			return this.state.favorite.includes(show.id);
+		isShowFavorite(serial) {
+			return this.state.favorite.includes(serial.show.id);
 		}
 
 		onQueryChange(event) {
