@@ -18,9 +18,9 @@ class App extends Component {
 			 .then((results) => this.setState({ shows: results }));
 		}
 
-		addShowToFavorites(show) {
+		addShowToFavorites(serial) {
 			this.setState({
-				favorite : this.state.shows.show.id,
+				favorite : this.state.favorite.conact(serial.show.id),
 			});
 		}
 
@@ -39,8 +39,8 @@ class App extends Component {
 				<input type = "search" onChange = {this.onQueryChange.bind(this)}/>
 
 				<section>
-					{this.state.shows.map((show) => (
-						<Shows show = {show} isFavorite = {this.props.isShowFavorite(show)} Favorites = {this.addShowToFavorites.bind(this)} key = {show.show.id} />
+					{this.state.shows.map((serial) => (
+						<Shows serial = {serial} isFavorite = {this.isShowFavorite(serial)} Favorites = {this.addShowToFavorites.bind(this)} key = {serial.show.id} />
 						))}
 				</section>
 			</div>

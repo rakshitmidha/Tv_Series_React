@@ -3,15 +3,16 @@ import '../styles/show.css'
 
 class Shows extends Component {
 
-	addToFavorites(show) {
-		this.props.Favorites(this.props.show);
+	addToFavorites(serial) {
+		this.props.Favorites(this.props.serial);
 	}
 
 	render() {
 		return(
 			<article className={this.props.isFavorite ? 'is-favorite' : ''}>
-				<h2>{this.props.show.show.name}</h2>
-				<img alt = {this.props.show.show.name} src = {this.props.show.image.orignal} />
+				<h2>{this.props.serial.show.name}</h2>
+				{console.log(this.props.serial)}
+				<img alt = {this.props.serial.show.name} src = {this.props.serial.show.image.original} />
 				<button onClick = {this.addToFavorites.bind(this)}>Favorite </button>
 				</article>
 		);
